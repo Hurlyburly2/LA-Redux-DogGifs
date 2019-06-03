@@ -52,8 +52,9 @@ const gifList = document.getElementById('gif-list')
 const render = () => {
   let doggoList = []
   store.getState().pups.forEach(function(doggo) {
-    debugger
+    doggoList += `<li><img src=${doggo.url}><span style="font-size:30px;">${doggo.rating}</span></li>`
   })
+  gifList.innerHTML = doggoList
 }
 
 render();
