@@ -12,7 +12,10 @@ const initialState = {
 // Reducer
 
 const gifReducer = (state = initialState, action) => {
-  // ...fill in your Reducer code here
+  switch(action.type) {
+    default:
+      return state;
+  }
 }
 
 // JS to access new pup form
@@ -45,3 +48,13 @@ const store = createStore(gifReducer);
 
 // Renders list of gifs to page
 const gifList = document.getElementById('gif-list')
+
+const render = () => {
+  let doggoList = []
+  store.getState().pups.forEach(function(doggo) {
+    debugger
+  })
+}
+
+render();
+store.subscribe(render);
