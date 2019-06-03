@@ -13,6 +13,11 @@ const initialState = {
 
 const gifReducer = (state = initialState, action) => {
   switch(action.type) {
+    case ADD_PUP:
+      const newPupArray = state.pups.concat(action.newPup)
+      return Object.assign({}, state, {
+        pups: newPupArray
+      })
     default:
       return state;
   }
